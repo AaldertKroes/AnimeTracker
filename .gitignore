@@ -1,0 +1,9 @@
+*.dll
+*.vsidx
+*.bin
+/bin/*
+*.db
+*.cache
+/obj/*
+/Properties/*
+/.vs/*

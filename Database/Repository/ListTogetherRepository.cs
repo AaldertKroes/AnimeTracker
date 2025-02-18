@@ -27,10 +27,11 @@ public class ListTogetherRepository
     public bool Add(ListTogetherDTO dto)
     {
         AnimeRepository animeRepository = new();
+        MovieRepository movieRepository = new();
         try
         {
-            if (dto.AnimeId != null) dto.Anime = animeRepository.GetById(dto.Id);
-            //if (entity.MovieId != null) entity.MovieId = movieRepository.GetById(entity.Id);
+            if (dto.AnimeId != null) dto.Anime = animeRepository.GetById((int)dto.AnimeId);
+            if (dto.MovieId != null) dto.Movie = movieRepository.GetById((int)dto.MovieId);
 
             _ctx.Add(dto);
             _ctx.SaveChanges();
